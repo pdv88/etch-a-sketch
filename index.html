@@ -10,8 +10,19 @@
     <header>
 
     </header>
-    
-    
+        <div>
+            <h1>ETCH A SKETCH</h1>
+        </div>
+        <div id="grid" class="grid"></div>
+        <div id="buttons" class="buttons">
+            <button class="button" onclick="changeColor('black')">Black</button>
+            <button class="button" onclick="changeColor('rainbow')">Rainbow</button>
+            <button class="button" onclick="changeColor('white')">Erase</button>
+            <button class="button" onclick="reset()">Reset</button>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="16" max="1080" value="50" class="slider" id="myRange">
+        </div>
     <footer>
 
     </footer>

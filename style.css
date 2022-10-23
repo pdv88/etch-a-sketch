@@ -1,0 +1,43 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgrey;
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem;
+}
+
+h1 {
+    text-align: center;
+    text-justify:auto;
+}
+.grid {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   width: 500px;
+   height: 500px;
+   border-style: solid;
+   border-radius: 10px;
+   border-width: 1px;
+   box-shadow: 10px 10px 8px #888888;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 125px); 
+    grid-template-rows: 50px;
+    justify-content: center;
+}
+
+.cell {
+    background-color: white
+}
+
+.cell:hover {
+    background-color: gray;
+}
+
+.slidercontainer {
+    display: grid;
+    justify-content: center;
+}
