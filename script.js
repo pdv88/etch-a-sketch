@@ -1,22 +1,38 @@
-let color = 'black'
+var color = 'black'
+
+let slider = document.getElementById("myRange")
+slider.addEventListener("change", newValue)
+let res = slider.value
+let sliderText = document.getElementById("sliderText")
+
+function newValue(){
+    res = slider.value
+    let grid = document.querySelector('#grid')
+    let cells = grid.querySelectorAll('div')
+    cells.forEach((div) => div.style.backgroundColor = 'white')
+    makeGrid(res)
+    sliderText.textContent = `Resolution ${res}px`
+}
 
 function makeGrid(res) {
     let grid = document.querySelector('#grid')
     grid.style.gridTemplateColumns = `repeat(${res}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${res}, 1fr)`
-    let cell = document.querySelectorAll("#cell")
+    sliderText.textContent = `Resolution ${res}px`
 
+    
+    
     for (let i = (res * res); i > 0; i--){
-        let col = document.createElement('div')
-        col.addEventListener("mouseover", paint)
-        col.classList.add("cell", "col")
-        grid.insertAdjacentElement("beforeend", col)
+        let cell = document.createElement("div")
+        cell.addEventListener("mousedown", paint)
+        cell.style.backgroundColor = 'white'
+        grid.insertAdjacentElement("beforeend", cell)
     } 
 }
 
-makeGrid(50)
+makeGrid(res)
 
-function paint(color){
+function paint(){
     if(color === 'rainbow'){
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     } else {
@@ -30,5 +46,7 @@ function changeColor(choice) {
 }
 
 function reset(){
-    makeGrid(50)
+    let grid = document.querySelector('#grid')
+    let cells = grid.querySelectorAll('div')
+    cells.forEach((div) => div.style.backgroundColor = 'white') 
 }

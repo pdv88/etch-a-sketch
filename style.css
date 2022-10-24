@@ -17,7 +17,6 @@ h1 {
    width: 500px;
    height: 500px;
    border-style: solid;
-   border-radius: 10px;
    border-width: 1px;
    box-shadow: 10px 10px 8px #888888;
 }
@@ -29,15 +28,8 @@ h1 {
     justify-content: center;
 }
 
-.cell {
-    background-color: white
-}
 
-.cell:hover {
-    background-color: gray;
-}
-
-.slidercontainer {
+.sliderContainer {
     display: grid;
     justify-content: center;
 }
